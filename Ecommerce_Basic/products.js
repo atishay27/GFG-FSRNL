@@ -48,9 +48,15 @@ const products = [
   },
 ];
 
-function showProducts() {
+const searchInput = document.querySelector("#searchInput");
+const searchBtn = document.querySelector("#searchBtn");
+
+function showProducts(searchValue = "") {
   const prodListDiv = document.querySelector(".products");
-  for (product of products) {
+  prodListDiv.textContent = "";
+  for (product of products.filter((val) =>
+    val.name.toLowerCase().includes(searchValue.toLowerCase())
+  )) {
     const productDiv = document.createElement("div");
     productDiv.classList.add("product-div");
 
@@ -98,3 +104,18 @@ function showProducts() {
 }
 
 showProducts();
+searchBtn.addEventListener("click", () => {
+  showProducts(searchInput.value);
+});
+
+searchInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    showProducts(searchInput.value);
+  }
+});
+
+searchInput.addEventListener("input", (e) => {
+  if (searchInput.value === "") {
+    showProducts();
+  }
+});
