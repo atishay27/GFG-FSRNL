@@ -91,9 +91,18 @@
 .success-btn {
   margin-top: 10px;
 }
+.nav-menu {
+  grid-column: 2/4;
+  justify-self: flex-end;
+}
 @media only screen and (max-width: 600px) {
   .main {
     grid-template-columns: 1fr 12fr 1fr;
+  }
+  .nav-menu {
+    justify-self: center;
+    grid-column: 1/2;
+    margin-right: 0px;
   }
 }
 

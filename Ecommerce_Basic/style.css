@@ -22,7 +22,7 @@ body {
 }
 .navbar-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-content: flex-start;
   align-items: center;
 }
@@ -49,8 +49,25 @@ body {
   text-decoration: none;
 }
 .nav-menu {
+  align-self: center;
   justify-self: flex-end;
   margin-right: 10px;
+}
+.searchDiv {
+  justify-self: center;
+  align-self: center;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+#searchInput {
+  padding: 5px;
+}
+#searchBtn {
+  background-color: var(--form-secondary-bg-color);
+  color: white;
+  border: 0px;
+  padding: 5px;
 }
 
 /* Footer */
@@ -81,6 +98,10 @@ body {
   .company {
     justify-content: center;
     margin-bottom: 5px;
+  }
+  .searchDiv {
+    margin-bottom: 10px;
+    justify-self: center;
   }
 }
 

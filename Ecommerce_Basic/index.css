@@ -102,10 +102,19 @@
   border: none;
   background-color: #000;
 }
+.nav-menu {
+  grid-column: 2/4;
+  justify-self: flex-end;
+}
 
 @media only screen and (max-width: 600px) {
   .products {
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 1fr;
+  }
+  .nav-menu {
+    justify-self: center;
+    grid-column: 1/2;
+    margin-right: 0px;
   }
 }
